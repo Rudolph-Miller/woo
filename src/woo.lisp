@@ -70,8 +70,7 @@
 (defun run (app &key (debug t) (port 5000) (address "0.0.0.0") (backlog *default-backlog-size*) fd
                   worker-num)
   (assert (and (integerp backlog)
-               (plusp backlog)
-               (<= backlog 128)))
+               (plusp backlog)))
   (let ((*app* app)
         (*debug* debug))
     (flet ((start-server-multi ()
